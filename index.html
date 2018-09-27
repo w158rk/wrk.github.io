@@ -6,13 +6,30 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ruikai Wang</title>
+  <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+<script src="./resources/db.js"></script>
 </head>
 <body>
 <!-- 这个div必须和index.js里的render方法里传入的第二个参数保持一致 -->
 <div id='app'>
+  <table>
+    <tr>
+      <th onclick="getHome()">主页</td>
+      <th onclick="getCV()">简历</td>
+      <th onclick="getStudy()">学习日志</td>
+      <th onclick="getArticles()">写作聊天</td>
+    </tr>
+    <tr>
+      <td colspan="4">
+          <div id='content'></div>
+      </td>   
+    </tr>
+  </table>
 </div>
-<script src="./dist/index.js"></script>
-<div id='test'>
-</div>
+
+<script type="text/babel" src='scripts/index.js'></script>
+
 </body>
 </html>
