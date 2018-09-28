@@ -1,4 +1,6 @@
 
+// 主页设计
+
 class Home extends React.Component {
     render() {
         return (<h1>Home</h1>);
@@ -16,6 +18,8 @@ function getHome() {
         element, document.getElementById('content')
     );
 }
+
+// 列表组件设计
 
 class ItemList extends React.Component {
     constructor(props) {
@@ -37,15 +41,17 @@ class ItemList extends React.Component {
     }
 }
 
+// 组件设计
+
 class Item extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
-        const {item} = this.props;
+        var {item} = this.props;
         return (
-            <div>
+            <div onClick = {getArticle.bind(this, item)}>
                 <h1>{item.title}</h1>
                 {
                     item.hasOwnProperty('abstract')?<h4>{item.abstract}</h4>:null
@@ -56,6 +62,7 @@ class Item extends React.Component {
 }
 
 function getArticles() {
+    console.log('articles');
     const element = (
         <div>
             <ItemList list={articles} />
@@ -85,4 +92,43 @@ function getCV() {
         element, document.getElementById('content')
     );
 
+}
+
+// 文章界面设计
+
+class Article extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const {item} = this.props;
+        var list = item.content.split('\n');
+        console.log(list);
+        return (
+            <div>
+                <h1>{item.title}</h1>
+                {
+                    list.map((par) => {
+                        return <p className='plaintext'>{par}</p>
+                    })
+                }
+                {/* <textarea className="plaintext">{item.content}</textarea> */}
+            </div>
+        )
+    }
+}
+
+function getArticle(item) {
+    // console.log(e);
+    console.log('article');
+    console.log(item.title);
+    const element = (
+        <div>
+            <Article item={item} />
+        </div>
+    );
+    ReactDOM.render(
+        element, document.getElementById('content')
+    );
 }
