@@ -103,8 +103,17 @@ class Article extends React.Component {
 
     render() {
         const {item} = this.props;
+        if(item.hasOwnProperty('src')){
+            var reader = new FileReader();
+            var f = reader.onload(item.src);
+            console.log(item.src);
+            var text=reader.readAsText(f);
+            console.log(text);
+            return (
+                <div dangerouslySetInnerHTML={{__html: {text}}} />
+            )
+        }
         var list = item.content.split('\n');
-        console.log(list);
         return (
             <div>
                 <h1>{item.title}</h1>

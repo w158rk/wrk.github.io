@@ -23,6 +23,11 @@ var studies = [
         abstract: "studystudy2",
         content: "studystudystudy2",
         id: "4"
+    },
+    {
+        title: "html",
+        src:"../resources/record.html",
+        id:"5"
     }
 ];
 
