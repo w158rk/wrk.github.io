@@ -25,7 +25,7 @@ class ItemList extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         var {list} = this.props;
 
@@ -86,7 +86,8 @@ function getStudy() {
 
 function getCV() {
     const element = (
-        <img src={cv.src}></img>
+      <a className='media' href='resources/cv.pdf'>}DF</a>
+        // <img src={cv.src}></img>
     );
     ReactDOM.render(
         element, document.getElementById('content')
