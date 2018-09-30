@@ -86,7 +86,7 @@ function getStudy() {
 
 function getCV() {
     const element = (
-      <a className='media' href='resources/cv.pdf'>}DF</a>
+      <a className='media' href='./resources/cv.pdf'>PDF</a>
         // <img src={cv.src}></img>
     );
     ReactDOM.render(
