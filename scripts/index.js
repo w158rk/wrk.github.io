@@ -84,16 +84,16 @@ function getStudy() {
     );
 }
 
-function getCV() {
-    const element = (
-      <a className='media' href='./resources/cv.pdf'>PDF</a>
-        // <img src={cv.src}></img>
-    );
-    ReactDOM.render(
-        element, document.getElementById('content')
-    );
+// function getCV() {
+//     const element = (
+//       <a className='media' href='./resources/cv.pdf'>PDF</a>
+//         // <img src={cv.src}></img>
+//     );
+//     ReactDOM.render(
+//         element, document.getElementById('content')
+//     );
 
-}
+// }
 
 // 文章界面设计
 
