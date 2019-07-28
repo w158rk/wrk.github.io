@@ -163,3 +163,36 @@
 .cv-div div {
     margin-left: 12%;
 }
+
+/* projects */
+
+.projects-grid {
+    text-align: center;
+    margin: auto;
+}
+
+.projects-grid a {
+    margin: auto;
+    text-decoration: none;
+}
+
+/* Project css */
+
+.project-display{
+    text-align : center;
+}
+
+.project-display p {
+    color: gray
+}
+
+.project-display nav {
+    margin: auto;
+    width: 30%;
+    display: flex;
+}
+
+.project-display Button {
+    width: 30%;
+    margin: auto;
+}

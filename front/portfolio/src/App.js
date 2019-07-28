@@ -14,7 +14,7 @@ function App() {
                 <Navigation>
                     <Link to="/">Home</Link>
                     <Link to="/resume">Resume</Link>
-                    <Link to="/project">Projects</Link>
+                    <Link to="/projects">Projects</Link>
                     <Link to="/blog">Blogs</Link>
                     <Link to="/contact">Contact</Link>
                 </Navigation>
@@ -23,16 +23,16 @@ function App() {
                 <Navigation>
                     <Link to="/">Home</Link>
                     <Link to="/resume">Resume</Link>
-                    <Link to="/project">Projects</Link>
+                    <Link to="/projects">Projects</Link>
                     <Link to="/blog">Blogs</Link>
                     <Link to="/contact">Contact</Link>
                 </Navigation>
             </Drawer>
             <Content>
                 <div className="page-content" />
+                <Main />
             </Content>
         </Layout>
-        <Main />
     </div>  
   );
 }

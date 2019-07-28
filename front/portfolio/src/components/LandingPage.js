@@ -13,7 +13,7 @@ class LandingPage extends Component {
                         />
 
                         <div className="banner-text">
-                            <h1> Undergraduate Student in USTC </h1>
+                            <h1> Undergraduate Student </h1>
                             <hr /> 
 
                             <p>Cryptography | Security </p>
