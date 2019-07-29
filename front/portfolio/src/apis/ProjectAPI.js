@@ -29,20 +29,20 @@ export function fetchProject(id) {
 export function updateProject(oldProject, newProject) {
 
     let id = oldProject.id;
-    let api_url = `${API_URL}/${id}`;
+    let api_url = `${API_URL}`;
     console.log(api_url);
 
     return dispatch => {
-        dispatch(updateProjectBegin(oldProject.id, newProject));
-        return fetch(`${api_url}`,{
-            method : 'POST',
+        dispatch(updateProjectBegin(id, newProject));
+        return fetch(`${api_url}/${id}`,{
+            method : 'PUT',
             headers : API_HEADERS,
             body : JSON.stringify(newProject)
         })
         .then(handleErrors)
         .then(res => res.json()) 
         .then(res => {
-            dispatch(updateProjectSuccess(res));
+            dispatch(updateProjectSuccess());
         })
         .catch(error => dispatch(updateProjectError(error, oldProject)));
     }
@@ -63,24 +63,21 @@ export function createProject(project) {
             body : JSON.stringify(project)
         })
         .then(handleErrors)
-        .then(res => res.json()) 
-        .then(res => {
-            dispatch( createProjectSuccess(res) );
+        .then(() => {
+            dispatch( createProjectSuccess() );
         })
-        .catch(error => dispatch( createProjectError(error, project) ));
+        .catch(error => dispatch( createProjectError(error) ));
         
     }
 
 }
 
-export function deleteProject(project) {
+export function deleteProject(id) {
 
-    let id = project.id;
     let api_url = `${API_URL}/${id}`;
-    console.log(api_url, "delete");
 
     return dispatch => {
-        dispatch(deleteProjectBegin(project.id));
+        dispatch(deleteProjectBegin(id));
         return fetch(`${api_url}`,{
             method : 'DELETE',
             headers : API_HEADERS,
@@ -89,7 +86,7 @@ export function deleteProject(project) {
         .then(res => {
             dispatch(deleteProjectSuccess());
         })
-        .catch(error => dispatch(deleteProjectError(error, project)));
+        .catch(error => dispatch(deleteProjectError(error)));
     }
 
 }

@@ -24,8 +24,24 @@ class Project extends Component {
 
     }
 
-    display () {
+    removeProject() {
 
+        const {project} = this.props; 
+
+        this.props.dispatch(deleteProject(project.id))
+        .then(this.props.history.push("/projects"));
+
+        
+    }
+
+    modifyProject() {
+
+        const {id} = this.props.project;
+        this.props.history.push(`/project/update/${id}`);
+
+    }
+
+    render() {
         const {project} = this.props;
 
         return (
@@ -33,26 +49,11 @@ class Project extends Component {
                 <h1> {project.title} </h1>
                 <p> {project.brief} </p>
                 <nav>
-                <Button raised colored> Modify </Button>
-                <Button raised accent> Delete </Button>
+                <Button raised colored onClick={this.modifyProject.bind(this)}> Modify </Button>
+                <Button raised accent onClick={this.removeProject.bind(this)}> Delete </Button>
                 </nav>
             </div>
         )
-
-    }
-
-    removeProject() {
-
-        const {project} = this.props; 
-
-        this.props.dispatch(deleteProject(project))
-        .then(this.props.history.push("/project"));
-
-        
-    }
-
-    render() {
-        return this.display();
     }
 
 }

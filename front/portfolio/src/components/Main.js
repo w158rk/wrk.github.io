@@ -14,7 +14,12 @@ const Main = () => (
         <Route path="/contact" component={Contact} />
         <Route path="/resume" component={Resume} />
         <Route path="/projects" component={ProjectsContainer} />
-        <Route path="/project/:id" component={ProjectContainer} />
+        <Route path="/project/add" 
+                render = {props => <ProjectContainer {...props} mode="add" />} />
+        <Route path="/project/update/:id" 
+                render = {props => <ProjectContainer {...props} mode="edit" />} />
+        <Route path="/project/:id" 
+                render = {props => <ProjectContainer {...props} mode="show" />} />
 
     </Switch>
 

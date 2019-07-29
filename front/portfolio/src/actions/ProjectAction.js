@@ -14,16 +14,16 @@ export const createProjectBegin = (project) => ({
     }
 });
 
-export const createProjectSuccess = (res) => ({
+export const createProjectSuccess = () => ({
     type : CREATE_PROJECT_SUCCESS,
     payload : {}
 });
 
 
-export const createProjectError = (error, project) => ({
+export const createProjectError = (error) => ({
     type : CREATE_PROJECT_ERROR,
     payload : {
-        project : project
+        error : error
     }
 })
 
@@ -38,7 +38,7 @@ export const updateProjectBegin = (id, newProject) => ({
     }
 });
 
-export const updateProjectSuccess = (res) => ({
+export const updateProjectSuccess = () => ({
     type : UPDATE_PROJECT_SUCCESS,
     payload : {}
 });
@@ -46,6 +46,7 @@ export const updateProjectSuccess = (res) => ({
 export const updateProjectError = (error, oldProject) => ({
     type : UPDATE_PROJECT_ERROR,
     payload : {
+        error : error,
         project : oldProject
     }
 })
@@ -88,10 +89,9 @@ export const deleteProjectSuccess = () => ({
     type : DELETE_PROJECT_SUCCESS
 });
 
-export const deleteProjectError = (error, project) => ({
+export const deleteProjectError = (error) => ({
     type : DELETE_PROJECT_ERROR,
     payload : {
-        project : project,
         error : error
     }
 });
