@@ -2,8 +2,9 @@
   "projects": [
     {
       "id": 1,
-      "title": "The First Project",
-      "brief": "The First Project"
+      "title": "ECC Project",
+      "brief": "Survey about optimization on the implementation of ECC algorithms",
+      "url": "https://github.com/w158rk/easy-ecc/wiki"
     },
     {
       "id": 2,
