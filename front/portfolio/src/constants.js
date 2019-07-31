@@ -18,3 +18,10 @@ export const CREATE_PROJECT_ERROR = 'create project error';
 export const DELETE_PROJECT = 'delete project';
 export const DELETE_PROJECT_SUCCESS = 'delete project success';
 export const DELETE_PROJECT_ERROR = 'delete project error';
+
+export const API_HEADERS = {
+    'Content-Type': 'application/json; charset=UTF-8'
+};
+
+export const API_ADDRESS = "http://39.108.140.212:8080/api/v1"
+  

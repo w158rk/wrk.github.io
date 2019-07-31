@@ -48,6 +48,10 @@ class Project extends Component {
             <div className = 'project-display'>
                 <h1> {project.title} </h1>
                 <p> {project.brief} </p>
+                
+                
+                {project.url==='' ? {} : <a href={project.url}>Wiki Home</a>}
+                
                 <nav>
                 <Button raised colored onClick={this.modifyProject.bind(this)}> Modify </Button>
                 <Button raised accent onClick={this.removeProject.bind(this)}> Delete </Button>

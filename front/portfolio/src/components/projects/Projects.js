@@ -32,7 +32,7 @@ class Projects extends Component {
 
                 <div className="projects-grid">
 
-                    <Grid>
+                    <Grid className="projects-grid">
                     {
                     projects.map( (project) => {
                         return (
@@ -46,9 +46,9 @@ class Projects extends Component {
                                         <CardText>
                                             {project.brief}
                                         </CardText>
-                                        <CardActions border>
+                                        {/* <CardActions border>
                                             <Button colored>Github</Button>
-                                        </CardActions>
+                                        </CardActions> */}
                                         <CardMenu style={{color: '#fff'}}>
                                             <IconButton name="share" />
                                         </CardMenu>

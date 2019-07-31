@@ -1,10 +1,8 @@
 import { fetch } from 'whatwg-fetch';
 import { fetchProjectsBegin, fetchProjectsSuccess, fetchProjectsError } from '../actions/ProjectsAction';
+import { API_ADDRESS, API_HEADERS } from '../constants'
 
-const API_URL = 'http://localhost:3000/projects';
-const API_HEADERS = {
-  'Content-Type': 'application/json; charset=UTF-8',
-};
+const API_URL = `${API_ADDRESS}/projects`;
 
 export function fetchProjects() {
     return dispatch => {

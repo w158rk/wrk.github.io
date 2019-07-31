@@ -3,11 +3,9 @@ import { fetchProjectBegin, fetchProjectSuccess, fetchProjectError } from '../ac
 import { updateProjectBegin, updateProjectSuccess, updateProjectError } from '../actions/ProjectAction';
 import { createProjectBegin, createProjectSuccess, createProjectError } from '../actions/ProjectAction';
 import { deleteProjectBegin, deleteProjectSuccess, deleteProjectError } from '../actions/ProjectAction';
+import { API_ADDRESS, API_HEADERS } from '../constants'
 
-const API_URL = 'http://localhost:3000/projects';
-const API_HEADERS = {
-  'Content-Type': 'application/json; charset=UTF-8',
-};
+const API_URL = `${API_ADDRESS}/projects`;
 
 export function fetchProject(id) {
 
