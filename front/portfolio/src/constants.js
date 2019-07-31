@@ -23,5 +23,5 @@ export const API_HEADERS = {
     'Content-Type': 'application/json; charset=UTF-8'
 };
 
-export const API_ADDRESS = "http://39.108.140.212:8080/api/v1"
+export const API_ADDRESS = "http://localhost:8080/api/v1"
   
