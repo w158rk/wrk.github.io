@@ -47,6 +47,11 @@
     background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+    background-image: url("./static/background.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
     margin: auto;
     text-align: center;
     height: 100%;
@@ -55,11 +60,37 @@
     
 }
 
-.avatar-img {
-    height: 250px;
-    margin-top: 5em;
-    /* padding-top: 5em; */
+.mask-div {
+    background-color: black;
+    opacity: .7;
+
+    margin: auto;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;        /* 填满，而且没有滚动条 */
+}
+
+.avatar-div {
+    height: 40vh;
+    width: 40vh;
+    margin: auto;
+    margin-top: 5%;
     border-radius: 50%;
+
+    background-image: url("./static/avatar.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.avatar-mask {
+    background-color: black;
+    opacity: 0.9;
+
+    margin: auto;
+    text-align: center;
+    height: 100%;
+    width: 100%;
 }
 
 .banner-text {
