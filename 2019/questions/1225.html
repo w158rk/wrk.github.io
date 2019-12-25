@@ -1,0 +1,53 @@
+<h1 id="-">术语缩写</h1>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>术语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tui</td>
+<td>textual user interface</td>
+</tr>
+<tr>
+<td>css</td>
+<td>Canonical Spi Specification</td>
+</tr>
+<tr>
+<td>eSpi</td>
+<td>extended Spi</td>
+</tr>
+</tbody>
+</table>
+<h1 id="-">注意</h1>
+<blockquote>
+<p>The user can never invoke a fail process, it is implicitly added by the parser when no else branch is specified.</p>
+<p>Processes cannot be recursive (not even indirectly).</p>
+<p>As a general rule, it is recommended to put constant data of the protocol in the const: section, so that all processes can use them, without the need to declare them in the formal parameters list; this may include, for example, identifiers of protocol messages, constant strings, or enumerations.</p>
+<p>the css symbol table created by the Spi2Java parser is compatible with the one used by S^{3}A</p>
+<p>In order to analyze a spi calculus model by ProVerif, a syntax conversion is needed, because proverif uses different syntactic conventions. This operation can be performed by using the provided Spi2Proverif tool</p>
+<p>In order to use cast channels, a custom encoding layer must be provided, which is the code actually implementing the cast logic by the way.</p>
+<p>First, all channels and hashings must be manually specialized to any of their subtypes, as the Channel and Hashing types are abstract types, that cannot be instantiated.</p>
+</blockquote>
+<h1 id="-">步骤</h1>
+<ol>
+<li>生成css文件：<code>java -jar $JARS/spiParser.tui.jar -i spi/sof.spi -p sofA -o spi/sofA/sofA.css -r spi/sofA/sofA.rev</code></li>
+<li>生成eSpi文件：<code>java -jar $JARS/typer.tui.jar -s spi/sofA/sofA.css -o spi/sofA/sofATemplate.xml</code></li>
+<li>编辑eSpi文件 </li>
+<li>生成代码：<code>java -jar $JARS/javaGenerator.tui.jar -o java/generated/fullExample/sofAWRK -p fullExample.sofA -j java/imports -s spi/sofA/sofA.css -x spi/sofA/sofAFinal.xml</code></li>
+<li>编译：<code>javac -cp $JARS/spiWrapper.jar:$JARS/spiWrapperSR.jar java/generated/fullExample/sofB/*.java java/customMarsh/*.java</code></li>
+<li>执行：<code>java -cp $JARS/spiWrapper.jar:$JARS/spiWrapperSR.jar:java/generated:java fullExample.sofB.sofB_0_Main</code></li>
+</ol>
+<h1 id="-">参考资料</h1>
+<ul>
+<li><p><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/ic99spi.pdf">spi calculus</a></p>
+</li>
+<li><p><a href="https://docs.oracle.com/javase/8/docs/api/javax/crypto/class-use/Cipher.html">javax.crypto.Cipher</a></p>
+</li>
+<li><p><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#Cipher">javax.crypto支持的算法</a>: (AES, DES, 3DES, RSA, EC(IES/DSA)... )</p>
+</li>
+<li><p><a href="https://prosecco.gforge.inria.fr/personal/bblanche/proverif/">ProVerif</a>: 协议安全性证明，2018年还有发表。</p>
+</li>
+</ul>
